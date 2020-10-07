@@ -1,0 +1,42 @@
+//project
+.lg-heading {
+	font-size: 8rem;
+	text-transform: capitalize;
+	@include respond (tab-port) {
+		font-size: 6rem !important;
+	}
+	@include respond (phone) {
+		font-size: 4rem !important;
+	}
+}
+
+#typed,
+.typed-cursor {
+	font-family: Secular One;
+	font-size: 8rem;
+	text-transform: capitalize;
+	@include respond (tab-port) {
+		font-size: 6rem;
+	}
+	@include respond (phone) {
+		font-size: 4rem;
+	}
+}
+
+.sm-heading {
+	// display: block;
+	font-family: Lato !important;
+	font-size: 1.6rem !important;
+	margin-bottom: 2.5rem;
+	padding: .5rem 1.6rem;
+	text-transform: capitalize;
+	background-color: rgba(73,73,73,.5);
+	@include respond (phone) {
+		margin-top: 2rem;
+		text-align: center;
+		font-size: 1.2rem !important;
+	}
+}
+.text-secondary {
+	color: $yellow !important;
+}

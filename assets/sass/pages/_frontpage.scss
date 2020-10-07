@@ -1,0 +1,11 @@
+.frontpage {
+	height: 100vh;
+	&__content {
+		position: relative;
+		top: 40%;
+		transform: translateY(-50%);
+		@include respond (phone) {
+			top: 30%;
+		}
+	}
+}

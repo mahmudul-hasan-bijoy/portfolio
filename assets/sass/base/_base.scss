@@ -1,0 +1,91 @@
+/*
+0px - 600px:	Phone
+600px - 900px:	Tablet portrait
+900px - 1200px:	Tablet landscape
+[1200-1800px] is where our normal style apply
+1800px + : Big Desktop
+
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+ORDER: Base + Typography > Layout + Grid > Page Layout > Components;
+
+1em = 16px;
+*/
+*, html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+}
+body {
+  color: $white;
+  font-family: 'Lato', 'Secular One', sans-serif !important;
+  font-size: 1.6rem;
+  font-weight: 200;
+  @include respond(big-desktop) {
+    font-size: 1.8rem;
+  }
+  @include respond(tab-land) {
+    font-size: 1.5rem;
+  }
+  @include respond(tab-port) {
+    font-size: 1.4rem;
+  }
+  @include respond(phone) {
+    font-size: 1.2rem;
+  }
+  box-sizing: border-box;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; 
+  @include respond (tab-port) {
+    padding: 0;
+  }
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: Secular One !important;
+}
+h3,h6 {
+  padding: .8rem 0;
+}
+a,
+a:hover {
+  color: $white;
+  transition: .3s all;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}  
+
+.section {
+  margin: 5rem 0 5rem 0;
+}
+
+::selection {
+  background-color: #7ed56f;
+  color: #fff; }

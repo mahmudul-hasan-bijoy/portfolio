@@ -1,0 +1,299 @@
+.contact {
+	&__center {
+		margin-top: 10rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__container {
+		padding-top: 2rem;
+		display: grid;
+	    grid-template-columns: repeat(2, minmax(min-content, 35rem));
+	    grid-template-rows: repeat(5, min-content);
+	    justify-items: space-between;
+	    align-items: center;
+	    background: $white;
+	    border-radius: 0.4rem;
+	    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.25);
+	    @include respond (tab-port) {
+	    	grid-template-columns: 50rem;
+	    	grid-column-rows: repeat(6, min-content);
+	    }
+	    @include respond (phone) {
+	    	grid-template-columns: minmax(30rem, 40rem);
+	    }
+	}
+	&__direct-form {
+		// padding-top: 5rem 0 !important;
+		.or {
+			padding-top: 5rem;
+			font-family: Secular One;
+			display: block;
+		    color: $yellow;
+		    font-size: 4rem;
+		    margin-right: 1.5rem;
+		}
+		p {
+			margin-bottom: 2rem;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    text-align: center;
+		    align-items: center;
+		    font-size: 1.8rem;
+		    color: $white;
+		    text-transform: capitalize;
+		}
+	}
+	&__boxes {
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-evenly;
+	    align-items: center;
+	    margin-top: 2rem;
+	}
+	&__boxes div {
+		font-size: 1.6rem;
+		letter-spacing: 1.2px;
+	    border: .3rem solid $white;
+	    padding: 1.6rem 1rem;
+	    margin-bottom: 3rem;
+	    background-color: rgba($primary,.7);
+	    transition: 0.5s all ease-out;
+	    &:hover {
+	    	padding: .8rem .5rem;
+	    	background-color: $yellow;
+	    	color: $black;
+	    }
+	    &:hover span,
+	    &:hover a {
+	    	color: $black !important;
+	    }
+	    &:hover a {
+	    	text-decoration: underline;
+	    }
+	}
+}
+.form {
+	grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0.8rem 4rem;
+    position: relative;
+    @include respond (tab-port) {
+    	margin: 2rem 4rem .8rem 4rem;
+    }
+    &__1 {
+    	grid-row: 2 / 3;
+    }
+    &__2 {
+    	grid-row: 3 / 4;
+    }
+    &__3 {
+    	grid-row: 4 / 5;
+    }
+    &.active label {
+    	transform: translateY(-2.2rem);
+	    visibility: visible;
+	    font-size: 1.3rem;
+	    color: #7581ff;
+    }
+    &__input {
+    	font-size: 1.6rem;
+	    padding: 1rem 0;
+	    border: none;
+	    background: transparent;
+	    border-bottom: 2px solid #c1c1c1;
+	    &:focus {
+	    	outline: none;
+    		border-bottom: 2px solid #c1c1c1;
+    		&:invalid {
+    			border-bottom: 2px solid #7581ff;
+    		}
+	    }
+    }
+    &__label {
+    	font-size: 1.6rem;
+	    color: #c1c1c1;
+	    position: absolute;
+	    top: 1rem;
+	    pointer-events: none;
+	    transition: all 0.3s;
+    }
+    &__btn {
+    	grid-column: 1 / 2;
+	    grid-row: 5 / 6;
+	    background: #7581ff;
+	    color: #fff;
+	    border: none;
+	    font-size: 1.6rem;
+	    font-weight: 700;
+	    letter-spacing: 1px;
+	    padding: 1.1rem 0;
+	    margin: 2.8rem 0 4rem 4rem;
+	    cursor: pointer;
+	    border-radius: 0.4rem;
+	    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+	    overflow: hidden;
+	    position: relative;
+	    transition: all 0.2s;
+	    @include respond (tab-port) {
+	    	margin: 2.8rem 4rem 4rem 4rem;
+	    }
+	    &:focus {
+	    	outline: 0;
+	    }
+	    &:hover {
+	    	background-color: #5162fe;
+	    }
+	    & > * {
+	    	transition: .3s all;
+	    	transition-delay: 1s;
+    		display: inline-block;
+	    }
+	    &--invisible {
+	    	position: absolute;
+		    width: 100%;
+		    left: 0;
+		    top: -100%;
+		    &.visible {
+		    	top: 1.1rem;
+		    }
+	    }
+	    &--visible {
+	    	display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    &.invisible {
+		    	transform: translateY(200%);
+		    }
+	    }
+    }
+}
+.container-mail {
+	grid-column: 2 / 3;
+    grid-row: 2 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31rem;
+    height: 28rem;
+    margin-bottom: 4rem;
+    @include respond (tab-port) {
+    	grid-column: 1 / 2;
+        grid-row: 6 / 7;
+        height: 12rem;
+        margin-top: 4rem;
+        justify-self: center;
+    }
+}
+.mail {
+	position: relative;
+    top: -4rem;
+    left: -6rem;
+    @include respond (tab-port) {
+    	left: -27%;
+        top: -5rem;
+    }
+    &__top {
+    	position: absolute;
+	    top: -5.7rem;
+	    width: 0;
+	    height: 0;
+	    border-right: 8rem solid transparent;
+	    border-left: 8rem solid transparent;
+	    border-bottom: 5.8rem solid #ffab17;
+	    z-index: 0;
+	    &.closed {
+	    	transition: transform 0.6s 0.8s, z-index 0.2s 0.4s;
+		    z-index: 2;
+		    transition-delay: 0.5s;
+		    transform-origin: bottom left;
+		    transform: rotate3d(1, 0, 0, 180deg);
+	    }
+    }
+    &__back {
+    	position: absolute;
+	    background: #ffab17;
+	    width: 16rem;
+	    height: 10rem;
+	    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.3);
+    }
+    &__left {
+    	position: absolute;
+	    width: 0;
+	    height: 0;
+	    border-left: 8rem solid #ffc867;
+	    border-top: 5rem solid transparent;
+	    border-bottom: 5rem solid transparent;
+    }
+    &__right {
+    	position: absolute;
+	    left: 8rem;
+	    width: 0;
+	    height: 0;
+	    border-right: 8rem solid #ffc867;
+	    border-top: 5rem solid transparent;
+	    border-bottom: 5rem solid transparent;
+    }
+    &__bottom {
+    	position: absolute;
+	    top: 4.92rem;
+	    width: 0;
+	    height: 0;
+	    border-right: 8rem solid transparent;
+	    border-left: 8rem solid transparent;
+	    border-bottom: 5.08rem solid #ffbb43;
+    }
+    &__letter {
+    	position: absolute;
+	    top: -4rem;
+	    left: 2rem;
+	    width: 12rem;
+	    height: 9rem;
+	    background: #fff;
+	    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.15);
+	    overflow: hidden;
+	    transition: all 0.8s ease;
+	    &.move {
+	    	transform: translateY(45px);
+	    }
+	    & * {
+	    	background: #e0e0e0;
+	    }
+	    &-square {
+	    	position: absolute;
+		    top: 3rem;
+		    left: 1rem;
+		    width: 3.8rem;
+		    height: 4rem;
+		    &::before {
+		    	content: "";
+			    position: absolute;
+			    top: -2rem;
+			    width: 10rem;
+			    height: 1.5rem;
+			    background: inherit;
+		    }
+	    }
+	    &-lines {
+	    	top: 4.9rem;
+    		left: 5.8rem;
+	    }
+	    &-lines,
+	    &-lines::before,
+	    &-lines::after {
+	    	content: "";
+		    position: absolute;
+		    width: 5rem;
+		    height: 0.3rem;
+		    background: #e0e0e0;
+	    }
+	    &-lines::before {
+	    	top: -1rem;
+	    }
+	    &-lines::after {
+	    	top: 1rem;
+	    }
+    }
+}

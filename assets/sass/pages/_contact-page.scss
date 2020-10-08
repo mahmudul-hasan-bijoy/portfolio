@@ -206,7 +206,7 @@
 	    z-index: 0;
 	    &.closed {
 	    	transition: transform 0.6s 0.8s, z-index 0.2s 0.4s;
-		    z-index: 2;
+		    z-index: 1;
 		    transition-delay: 0.5s;
 		    transform-origin: bottom left;
 		    transform: rotate3d(1, 0, 0, 180deg);

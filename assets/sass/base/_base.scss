@@ -41,6 +41,8 @@ html {
   font-size: 62.5%;
 }
 body {
+  height: 100%;
+  
   color: $white;
   font-family: 'Lato', 'Secular One', sans-serif !important;
   font-size: 1.6rem;
@@ -72,6 +74,10 @@ h1,h2,h3,h4,h5,h6 {
 h3,h6 {
   padding: .8rem 0;
 }
+.paragraph {
+  color: $white;
+  line-height: 1.6;
+}
 a,
 a:hover {
   color: $white;
@@ -87,5 +93,5 @@ img {
 }
 
 ::selection {
-  background-color: #7ed56f;
-  color: #fff; }
+  background-color: $white;
+  color: $black; }

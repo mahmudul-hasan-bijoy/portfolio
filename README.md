@@ -1,11 +1,11 @@
-<img src="assets/img/screenshot.png" title="Academy">
+<img src="assets/img/screenshot.png" title="Portfolio">
 
-# <a href="https://mahmudul-hasan-bijoy.github.io/academy/" target="_blank">The Academy | Educational Template</a><br>
+# <a href="https://mahmudul-hasan-bijoy.github.io/portfolio/" target="_blank">MHB | Portfolio</a><br>
 
-- Multipage Website
+- Personal Portfolio Website
 - HTML5
 - CSS3
-- Bootstrap4
+- No Framework
 - jQuery/JavaScript
 - devDependencies: npm package
 
@@ -19,8 +19,7 @@ NPM tasks list:
 
 - `npm run start`: run the website on a live server & compile SASS to CSS
 - `npm run build:css`: compile all the SASS files, concatinating, autoprefix and compress CSS/JS into a minified version
-- `npm run build:bootstrap`: automatically make relevant files for bootstrap and put them into their related directory.
-  
+
 # License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)

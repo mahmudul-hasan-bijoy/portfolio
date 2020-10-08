@@ -1,0 +1,163 @@
+.projects {
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgba(0,0,0,.8);
+  }
+    &__tab {
+        margin: 5rem 0 2rem 0;
+    }
+    &__sidebar {
+        padding-left: 1.5rem;
+        border-left: .1rem solid rgba($white, .3);
+        @include respond (mini-tab) {
+            border: 0;
+            padding-left: 0;
+        }
+    }
+    p {
+      text-align: justify;
+    }
+}
+
+//tabs
+.tabs {
+  max-width: 100%;
+  //max-width: 100%;
+  min-width: 30rem;
+  border-bottom: .5rem solid $fiverr;
+  margin-top: 2rem;
+  &__links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //height: 6rem;
+    //background: $primary;
+    list-style-type: none;
+    @include respond (mini-tab) {
+      height: calc(6rem / 2);
+    }
+    li {
+      flex: 1;
+      .tabs__link {
+        all: unset;
+        position: relative;
+        height: 6rem;
+        width: 100%;
+        background: $tab-bg;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.3s;
+        @include respond (tab-port) {
+          height: calc(6rem / 2);
+          font-size: 1.2rem;
+        }
+        // overlay
+        &::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background-color: $fiverr;
+          transform: scaleY(0);
+          transform-origin: top;
+          transition: 0.5s ease-in-out;
+        }
+        .tabs__link__text {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0.6;
+          transition: 0.5s;
+          &:active {
+            color: red;
+          }
+          // big-text
+          &::before {
+            position: absolute;
+            content: attr(data-text);
+            top: 160%;
+            z-index: -1;
+            font-size: 4rem;
+            font-weight: 600;
+            color: white;
+            opacity: 0.2;
+            transition: 3s ease-out;
+
+            @include respond (tab-port) {
+              display: none;
+            }
+          }
+        }
+        &:hover {
+          &::before {
+            transform: scaleY(1);
+          }
+          .tabs__link__text {
+            color: $white;
+            opacity: 1;
+
+            &::before {
+              transform: translateY(-300%);
+            }
+          }
+        }
+        &.active {
+          transform: scaleY(1.4);
+          background: $white;
+          &::before {
+            transform: scaleY(0.05);
+          }
+          .tabs__link__text {
+            transform: scaleY(0.714);
+          }
+        }
+        &.active .tabs__link__text,
+        &.active:hover .tabs__link__text {
+          color: $black;
+          font-family: 2rem;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__contents {
+    color: black;
+    position: relative;
+    margin-top: 0;
+    padding: 40px 60px;
+    background: $white;
+    list-style-type: none;
+    transition: 1s;
+    .tabs__content {
+      display: none;
+      min-height: 200px;
+      font-weight: 300;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(30%);
+      animation: fadeIn 0.6s forwards;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

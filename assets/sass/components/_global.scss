@@ -9,6 +9,9 @@
 	&__about {
 		background-image: url(../img/bg.jpeg);
 	}
+	&__projects {
+		background-image: url(../img/projects_bg.jpg);
+	}
 	&__work {
 		background-image: url(../img/work_bg.jpg);
 	}
@@ -31,7 +34,11 @@
 	
 main {
 	padding: 0 5rem;
-	height: 100vh;
+
+
+	//height: 100vh;
+
+	
 	min-height: calc(100vh - 6rem);
 	overflow: hidden;
 	overflow-y: scroll;

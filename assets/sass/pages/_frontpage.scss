@@ -2,10 +2,10 @@
 	height: 100vh;
 	&__content {
 		position: relative;
-		top: 40%;
+		top: 50%;
 		transform: translateY(-50%);
 		@include respond (phone) {
-			top: 30%;
+			top: 50%;
 		}
 	}
 }

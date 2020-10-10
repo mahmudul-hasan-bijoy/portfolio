@@ -1,10 +1,11 @@
 .bg {
 	position: relative;
+	background-repeat: no-repeat;
 	background-position:center;
 	background-size: cover;
 	background-attachment: fixed;
 	&__frontpage {
-		background-image: url(../img/bg.jpg);
+		background-image: url(../img/frontpage_bg.jpg);
 	}
 	&__about {
 		background-image: url(../img/bg.jpeg);
@@ -19,12 +20,12 @@
 		background-image: url(../img/contact_bg.jpg);
 		background-position: bottom center;
 	}
-	// height: 100%;
+	height: 100%;
 	&::after {
 		content: '';
-		position: absolute;
+		position: fixed;
 		width: 100%;
-		height: 100%;
+		height: inherit;
 		top: 0;
 		left: 0;
 		background-color: rgba($primary,0.7);
@@ -34,14 +35,8 @@
 	
 main {
 	padding: 0 5rem;
-
-
-	//height: 100vh;
-
-	
-	min-height: calc(100vh - 6rem);
-	overflow: hidden;
-	overflow-y: scroll;
+	//overflow: hidden;
+	//overflow-y: scroll;
 	@include respond (phone) {
 		padding: 0 2.5rem;
 	}

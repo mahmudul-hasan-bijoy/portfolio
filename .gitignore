@@ -5,5 +5,5 @@ node_modules
 **/style.css.map
 **/normalize.min.css
 **/normalize.css
-**/what I Learn.txt
-**/.sass-cache
+what I Learn.txt
+*/assets/sass/.sass-cache
